@@ -82,19 +82,14 @@ geth init --datadir /workspace/chaindata ~/isuncoin/genesis.json
 geth \
 --datadir /workspace/chaindata \
 --networkid 8017 \
---mine --miner.threads=1 --miner.etherbase 0x048Adee1B0E93b30f9F7b71f18b963cA9bA5dE3b \
+--mine --miner.threads=1 --miner.etherbase 0xCAFECA05eB2686e2D7e78449F35d8F6D2Faee174 \
 --http --http.api eth,net,web3 \
 --http.port 8545 --port 30303 --authrpc.port 8551
 ```
 
-- Workaround
-```shell
-geth --datadir /workspace/chaindata --networkid 8017 --http --http.api eth,net,web3 --http.port 8545 --port 30303 --authrpc.port 8551 console
-> admin.nodeInfo.enode
-> miner.setEtherbase("0x048Adee1B0E93b30f9F7b71f18b963cA9bA5dE3b")
-> miner.start(1)
-> eth.getBalance("0x048Adee1B0E93b30f9F7b71f18b963cA9bA5dE3b")
-```
+### Official Node
+- enode://199e1fc79824ee7df1164c30427481ba0f0c42de3b3270860619cada6780ebe34edbe76251bf30326f007c1bc82b774eb7e86f4672ce41b2974823fcc4fccbaa@49.0.255.11:30303
+
 
 ### Starting ecProxy
 ```shell
