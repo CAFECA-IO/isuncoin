@@ -11,14 +11,15 @@ last updated on 2023-12-13
 ## Step
 - [Setup User](https://github.com/CAFECA-IO/KnowledgeManagement/blob/master/linux/create_sudoer_user_in_ubuntu.md)
 - [Setup SWAP](https://github.com/CAFECA-IO/KnowledgeManagement/blob/master/linux/setup_swap.md)
-- Setup Compilation Environment
-- Building From Source Code
-- Setup Environment
-- Creating Genesis
-- Initial iSunCoin
-- Starting iSunCoin in Screen
-- Starting ecProxy
-- Final Check
+- [Setup Compilation Environment](#setup-compilation-environment)
+- [Building From Source Code](#building-from-source-code)
+- [Setup Environment](#setup-environment)
+- [Creating Genesis](#creating-genesis)
+- [Initial iSunCoin](#initial-isuncoin)
+- [Starting iSunCoin in Screen](#starting-isuncoin-in-screen)
+- [Starting ecProxy](#starting-ecproxy)
+- [Final Check](#final-check)
+- [Use iSunCoin with imToken](#use-isuncoin-with-imtoken)
 
 ### Setup Compilation Environment
 - Git
@@ -107,3 +108,6 @@ curl --location 'localhost' \
 	"id":83
 }'
 ```
+
+### Use iSunCoin with imToken
+[Click to use iSunCoin with imToken](imtokenv2://browse/add-network?networkName=iSunCoin&rpcUrl=https%3A%2F%2Fisuncoin.baifa.io%26chainId%3D8017&symbol=ISC&explorerUrl=https%3A%2F%2Fbaifa.io%2Fapp%2Fchains%2F8017)
