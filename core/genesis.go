@@ -189,6 +189,8 @@ func CommitGenesisState(db ethdb.Database, triedb *trie.Database, blockhash comm
 		switch blockhash {
 		case params.MainnetGenesisHash:
 			genesis = DefaultGenesisBlock()
+		case params.BoltGenesisHash:
+			genesis = DefaultBoltGenesisBlock()
 		case params.RinkebyGenesisHash:
 			genesis = DefaultRinkebyGenesisBlock()
 		case params.GoerliGenesisHash:
@@ -416,17 +418,18 @@ func LoadCliqueConfig(db ethdb.Database, genesis *Genesis) (*params.CliqueConfig
 }
 
 func (g *Genesis) configOrDefault(ghash common.Hash) *params.ChainConfig {
+	// console log ghash and params.MainnetGenesisHash
+	fmt.Println("ghash: ", ghash)
+	fmt.Println("params.MainnetGenesisHash: ", params.MainnetGenesisHash)
+	fmt.Println("params.BoltGenesisHash: ", params.BoltGenesisHash)
+
 	switch {
 	case g != nil:
 		return g.Config
 	case ghash == params.MainnetGenesisHash:
 		return params.MainnetChainConfig
-	case ghash == params.SepoliaGenesisHash:
-		return params.SepoliaChainConfig
-	case ghash == params.RinkebyGenesisHash:
-		return params.RinkebyChainConfig
-	case ghash == params.GoerliGenesisHash:
-		return params.GoerliChainConfig
+	case ghash == params.BoltGenesisHash:
+		return params.BoltChainConfig
 	default:
 		return params.AllEthashProtocolChanges
 	}
@@ -523,11 +526,21 @@ func (g *Genesis) MustCommit(db ethdb.Database) *types.Block {
 func DefaultGenesisBlock() *Genesis {
 	return &Genesis{
 		Config:     params.MainnetChainConfig,
-		Nonce:      66,
-		ExtraData:  hexutil.MustDecode("0x11bbe8db4e347b4e8c937c1c8370e4b5ed33adb3db69cbdb7a38e1e50b1b82fa"),
-		GasLimit:   5000,
-		Difficulty: big.NewInt(17179869184),
-		Alloc:      decodePrealloc(mainnetAllocData),
+		Nonce:      8017,
+		ExtraData:  hexutil.MustDecode("0x57656c6c636f6d6520746f206953756e436f696e"),
+		GasLimit:   50000000,
+		Difficulty: big.NewInt(8017),
+	}
+}
+
+// DefaultBoltGenesisBlock returns the Bolt network genesis block.
+func DefaultBoltGenesisBlock() *Genesis {
+	return &Genesis{
+		Config:     params.BoltChainConfig,
+		Nonce:      58017,
+		ExtraData:  hexutil.MustDecode("0x57656c6c636f6d6520746f20426f6c74636861696e"),
+		GasLimit:   50000000,
+		Difficulty: big.NewInt(8017),
 	}
 }
 
