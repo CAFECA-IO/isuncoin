@@ -39,10 +39,11 @@ import (
 
 // Ethash proof-of-work protocol constants.
 var (
-	FrontierBlockReward           = big.NewInt(5e+18) // Block reward in wei for successfully mining a block
-	ByzantiumBlockReward          = big.NewInt(3e+18) // Block reward in wei for successfully mining a block upward from Byzantium
-	ConstantinopleBlockReward     = big.NewInt(2e+18) // Block reward in wei for successfully mining a block upward from Constantinople
-	maxUncles                     = 2                 // Maximum number of uncles allowed in a single block
+	basicBlockReward              = big.NewInt(1e+18) // Block reward in wei for successfully mining a block
+	FrontierBlockReward           = basicBlockReward  // Block reward in wei for successfully mining a block
+	ByzantiumBlockReward          = basicBlockReward  // Block reward in wei for successfully mining a block upward from Byzantium
+	ConstantinopleBlockReward     = basicBlockReward  // Block reward in wei for successfully mining a block upward from Constantinople
+	maxUncles                     = 0                 // Maximum number of uncles allowed in a single block
 	allowedFutureBlockTimeSeconds = int64(15)         // Max seconds from current time allowed for blocks, before they're considered future blocks
 
 	// calcDifficultyEip5133 is the difficulty adjustment algorithm as specified by EIP 5133.
@@ -651,10 +652,12 @@ func (ethash *Ethash) SealHash(header *types.Header) (hash common.Hash) {
 }
 
 // Some weird constants to avoid constant memory allocs for them.
+/*
 var (
 	big8  = big.NewInt(8)
 	big32 = big.NewInt(32)
 )
+*/
 
 // AccumulateRewards credits the coinbase of the given block with the mining
 // reward. The total reward consists of the static block reward and rewards for
@@ -668,8 +671,15 @@ func accumulateRewards(config *params.ChainConfig, state *state.StateDB, header 
 	if config.IsConstantinople(header.Number) {
 		blockReward = ConstantinopleBlockReward
 	}
+	// block reward with halving
+	blockNumber := header.Number.Uint64()
+	halvingInterval := uint64(5000000)
+	halvings := blockNumber / halvingInterval
+	blockReward = new(big.Int).Div(blockReward, new(big.Int).Exp(big2, big.NewInt(int64(halvings)), nil))
+
 	// Accumulate the rewards for the miner and any included uncles
 	reward := new(big.Int).Set(blockReward)
+	/* no uncle rewoard
 	r := new(big.Int)
 	for _, uncle := range uncles {
 		r.Add(uncle.Number, big8)
@@ -681,5 +691,6 @@ func accumulateRewards(config *params.ChainConfig, state *state.StateDB, header 
 		r.Div(blockReward, big32)
 		reward.Add(reward, r)
 	}
+	*/
 	state.AddBalance(header.Coinbase, reward)
 }
