@@ -1,6 +1,6 @@
 # iSunCoin
 
-This repository is a fork of Ethereum's go-ethereum repository. We expand on v1.16.0 by adding functionalities that enable smart contracts to compute on encrypted data.
+This repository is a fork of Ethereum's go-ethereum repository. We expand on v1.11.6 by adding functionalities that enable smart contracts to compute on encrypted data.
 
 [切換至中文](/README_ZH.md)
 
