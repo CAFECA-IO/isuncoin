@@ -22,7 +22,7 @@ const (
 	GasLimitBoundDivisor uint64 = 1024               // The bound divisor of the gas limit, used in update calculations.
 	MinGasLimit          uint64 = 5000               // Minimum the gas limit may ever be.
 	MaxGasLimit          uint64 = 0x7fffffffffffffff // Maximum the gas limit (2^63-1).
-	GenesisGasLimit      uint64 = 4712388            // Gas limit of the Genesis block.
+	GenesisGasLimit      uint64 = 50000000           // Gas limit of the Genesis block.
 
 	MaximumExtraDataSize  uint64 = 32    // Maximum size extra data may be after Genesis.
 	ExpByteGas            uint64 = 10    // Times ceil(log256(exponent)) for the EXP instruction.
@@ -124,7 +124,7 @@ const (
 	DefaultElasticityMultiplier     = 2          // Bounds the maximum gas limit an EIP-1559 block may have.
 	InitialBaseFee                  = 1000000000 // Initial base fee for EIP-1559 blocks.
 
-	MaxCodeSize     = 24576           // Maximum bytecode to permit for a contract
+	MaxCodeSize     = 65535           // Maximum bytecode to permit for a contract
 	MaxInitCodeSize = 2 * MaxCodeSize // Maximum initcode to permit in a creation transaction and create instructions
 
 	// Precompiled contract gas prices
@@ -169,7 +169,7 @@ var Bls12381MultiExpDiscountTable = [128]uint64{1200, 888, 764, 641, 594, 547, 5
 
 var (
 	DifficultyBoundDivisor = big.NewInt(2048)   // The bound divisor of the difficulty, used in the update calculations.
-	GenesisDifficulty      = big.NewInt(131072) // Difficulty of the Genesis block.
-	MinimumDifficulty      = big.NewInt(131072) // The minimum that the difficulty may ever be.
-	DurationLimit          = big.NewInt(13)     // The decision boundary on the blocktime duration used to determine whether difficulty should go up or not.
+	GenesisDifficulty      = big.NewInt(801700) // Difficulty of the Genesis block.
+	MinimumDifficulty      = big.NewInt(801700) // The minimum that the difficulty may ever be.
+	DurationLimit          = big.NewInt(5)      // The decision boundary on the blocktime duration used to determine whether difficulty should go up or not.
 )
