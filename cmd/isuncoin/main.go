@@ -48,7 +48,7 @@ import (
 )
 
 const (
-	clientIdentifier = "geth" // Client identifier to advertise over the network
+	clientIdentifier = "iSunCoin" // Client identifier to advertise over the network
 )
 
 var (
@@ -274,7 +274,7 @@ func prepare(ctx *cli.Context) {
 	// If we're running a known preset, log it for convenience.
 	switch {
 	case ctx.IsSet(utils.BoltFlag.Name):
-		log.Info("Starting iSunCoin with Bolt testnet...")
+		log.Info("Starting iSunCoin with BOLT testnet...")
 
 	case ctx.IsSet(utils.RinkebyFlag.Name):
 		log.Info("Starting Geth on Rinkeby testnet...")
