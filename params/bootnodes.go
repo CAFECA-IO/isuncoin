@@ -26,7 +26,7 @@ var MainnetBootnodes = []string{
 }
 
 var BoltBootnodes = []string{
-	"enode://6ed94929f2cf247d5cf4b49505639d3186b78c4cc84f572b4fec75f4b0d42009db8efcf3b5d4767a539c351426ccdbb64e75fe0f9b14d8865064b96dbce754ce@49.0.255.11:30303",
+	"enode://48dc77f3df31b850536b6083106c20c999c3479f0d74ef752ced4c4e5c6da7be02c24b081c9d4df68ac1208abb5d5eb5cd905f051e3f1f38fb7a899ef5c0829c@49.0.255.11:30303",
 }
 
 // SepoliaBootnodes are the enode URLs of the P2P bootstrap nodes running on the
