@@ -35,6 +35,11 @@ cd isuncoin
 make isuncoin
 ```
 
+### Building Windows EXE
+```shell
+GOOS=windows GOARCH=amd64 go build -o isuncoin.exe ./cmd/isuncoin
+```
+
 ### Setup Environment
 ```shell
 sudo mv isuncoin/ /usr/local
