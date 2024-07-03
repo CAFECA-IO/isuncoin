@@ -44,7 +44,7 @@ sudo ln -s /usr/local/isuncoin/build/bin/isuncoin /usr/local/bin
 ### Start iSunCoin
 ```shell
 isuncoin \
---datadir /workspace/isuncoin \
+--datadir ~/isuncoin \
 --mine --miner.threads=1 --miner.etherbase 0xCAFECA05eB2686e2D7e78449F35d8F6D2Faee174 \
 --http --http.api eth,net,web3 \
 --http.port 8545 --port 30303 --authrpc.port 8551
@@ -59,13 +59,6 @@ isuncoin \
 --http --http.api eth,net,web3 \
 --http.port 8545 --port 30303 --authrpc.port 8551
 ```
-
-### Official Node
-- enode://199e1fc79824ee7df1164c30427481ba0f0c42de3b3270860619cada6780ebe34edbe76251bf30326f007c1bc82b774eb7e86f4672ce41b2974823fcc4fccbaa@49.0.255.11:30303
-```shell
-isuncoin --bootnodes "enode://199e1fc79824ee7df1164c30427481ba0f0c42de3b3270860619cada6780ebe34edbe76251bf30326f007c1bc82b774eb7e86f4672ce41b2974823fcc4fccbaa@49.0.255.11:30303"
-```
-
 
 ### Starting ecProxy
 ```shell

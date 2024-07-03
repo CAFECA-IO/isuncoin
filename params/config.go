@@ -74,7 +74,7 @@ var (
 		GrayGlacierBlock:              big.NewInt(0),
 		TerminalTotalDifficulty:       nil,
 		TerminalTotalDifficultyPassed: false,
-		ShanghaiTime:                  newUint64(1719792000),
+		ShanghaiTime:                  nil,
 		Ethash:                        new(EthashConfig),
 	}
 
@@ -98,7 +98,7 @@ var (
 		GrayGlacierBlock:              big.NewInt(0),
 		TerminalTotalDifficulty:       nil,
 		TerminalTotalDifficultyPassed: false,
-		ShanghaiTime:                  newUint64(1719792000),
+		ShanghaiTime:                  nil,
 		Ethash:                        new(EthashConfig),
 	}
 
