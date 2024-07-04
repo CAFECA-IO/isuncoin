@@ -37,8 +37,16 @@ make isuncoin
 
 ### Building Windows EXE
 ```shell
-GOOS=windows GOARCH=amd64 go build -o isuncoin.exe ./cmd/isuncoin
+GOOS=windows GOARCH=amd64 go build -o isuncoin-windows.exe ./cmd/isuncoin
 ```
+### Building Linux Binary
+```shell
+GOOS=linux GOARCH=amd64 go build -o isuncoin-linux ./cmd/isuncoin
+```
+
+### Building Mac Binary
+```shell
+go build -o isuncoin-mac ./cmd/isuncoin
 
 ### Setup Environment
 ```shell
