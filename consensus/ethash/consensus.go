@@ -40,11 +40,12 @@ import (
 // Ethash proof-of-work protocol constants.
 var (
 	basicBlockReward              = big.NewInt(1e+18) // Block reward in wei for successfully mining a block
+	minimumBlockReward            = big.NewInt(1e+15) // Minimum block reward in wei for successfully mining a block
 	FrontierBlockReward           = basicBlockReward  // Block reward in wei for successfully mining a block
 	ByzantiumBlockReward          = basicBlockReward  // Block reward in wei for successfully mining a block upward from Byzantium
 	ConstantinopleBlockReward     = basicBlockReward  // Block reward in wei for successfully mining a block upward from Constantinople
-	maxUncles                     = 0                 // Maximum number of uncles allowed in a single block
-	allowedFutureBlockTimeSeconds = int64(15)         // Max seconds from current time allowed for blocks, before they're considered future blocks
+	maxUncles                     = 2                 // Maximum number of uncles allowed in a single block
+	allowedFutureBlockTimeSeconds = int64(10)         // Max seconds from current time allowed for blocks, before they're considered future blocks
 
 	// calcDifficultyEip5133 is the difficulty adjustment algorithm as specified by EIP 5133.
 	// It offsets the bomb a total of 11.4M blocks.
@@ -676,6 +677,10 @@ func accumulateRewards(config *params.ChainConfig, state *state.StateDB, header 
 	halvingInterval := uint64(5000000)
 	halvings := blockNumber / halvingInterval
 	blockReward = new(big.Int).Div(blockReward, new(big.Int).Exp(big2, big.NewInt(int64(halvings)), nil))
+	// if block reward is less than minimum block reward, set it to minimum block reward
+	if blockReward.Cmp(minimumBlockReward) < 0 {
+		blockReward.Set(minimumBlockReward)
+	}
 
 	// Accumulate the rewards for the miner and any included uncles
 	reward := new(big.Int).Set(blockReward)
