@@ -1,114 +1,123 @@
 # iSunCoin
-## 緣起
-隨著人工智能技術的飛速發展，全球對算力的需求也在不斷提升。從早期的深度學習模型訓練到如今的大型語言模型、圖像生成技術，AI 在各行各業的應用越來越廣泛，而這些技術的背後無不依賴強大的計算能力。然而，儘管 AI 發展帶來了對算力的巨大需求，硬體成本卻並未隨著算力需求的增長而顯著攀升。
-過去摩爾定律預示著半導體技術的發展將使得晶片性能每兩年翻倍，而硬體成本則持續下降，這使得如今的手機、筆記型電腦，甚至家用電器的算力，已經能夠與過去的超級電腦相媲美。然而，儘管硬體成本不斷下降，雲端運算的租賃成本卻並未呈現相同的下降趨勢，雲端運算市場的價格仍然保持較高水平，這使得需要大規模數據處理的 AI 項目和服務在發展上容易因資本不足而阻礙。
+<center>English | [繁體中文](readme_zh.md)</center>
+## Background
+With the rapid development of artificial intelligence, the global demand for computing power has been steadily increasing. From early deep learning model training to today's large language models and image generation techniques, AI applications are becoming increasingly widespread across various industries. These technologies rely heavily on powerful computing capabilities. However, despite the surging demand for computing power driven by AI, hardware costs have not increased significantly.
 
-這一矛盾突顯了雲端運算領域的成本瓶頸，也為新的分佈式計算架構提供了契機。如何在保持算力提升的同時，降低計算資源的運營成本，成為了技術創新的一大挑戰。因此，iSunCoin 這樣的分佈式計算平台應運而生，旨在解決傳統雲端運算中的成本問題，將全球閒置的計算資源進行有效整合，提供高效、低成本的算力服務，從而推動 AI 和其他高需求應用的可持續發展。
-iSunCoin 的出現將能夠有效降低計算資源的租賃成本，並實現更加公平、靈活的資源分配，讓更多的開發者和企業能夠以更低的成本利用 AI 和其他計算資源，加速人工智能的導入以及永續發展。
+Moore's Law once predicted that semiconductor technology would double chip performance every two years while hardware costs continued to decline. This has led to today's smartphones, laptops, and even household appliances having computing power comparable to supercomputers of the past. However, despite the decreasing hardware costs, the rental costs of cloud computing have not shown a similar downward trend. Cloud computing market prices remain high, hindering the development of AI projects and services that require large-scale data processing due to insufficient capital.
 
-## SUNS 標準化的算力衡量單位
-在 iSunCoin 網絡中，計算資源的整合與標準化對於實現高效且可擴展的分佈式計算至關重要。為了便於跨不同硬體和網絡條件的統一衡量與使用，我們引入了 SUNS（Scalable Unified Node Strength）作為標準化的算力衡量單位。SUNS 不僅僅是一個簡單的數字，它將 CPU 算力、GPU 算力、記憶體容量、儲存空間和網路頻寬這些多維度資源進行打包與統一，為開發者和使用者提供一個清晰且易於操作的虛擬化資源單位。
+This contradiction highlights the cost bottleneck in the cloud computing sector and presents an opportunity for new distributed computing architectures. How to maintain computing power while reducing the operating costs of computing resources has become a major challenge for technological innovation. Therefore, distributed computing platforms like iSunCoin have emerged to address the cost issues of traditional cloud computing. By effectively integrating idle computing resources worldwide, iSunCoin aims to provide efficient and low-cost computing services, thereby promoting the sustainable development of AI and other high-demand applications.
 
-通過 SUNS，iSunCoin 能夠實現資源的標準化與虛擬化，使得計算資源可以被精確定義並有效配置。在這一框架下，每個參與者不論是提供者還是使用者，都可以以同一標準來衡量、交換與使用不同的計算服務，進一步加速分佈式應用和服務的部署。這不僅提升了資源配置的效率，也為系統的可擴展性、靈活性和跨平台兼容性提供了強有力的支持。
+The emergence of iSunCoin can effectively reduce the rental costs of computing resources and enable fairer and more flexible resource allocation. This allows more developers and enterprises to utilize AI and other computing resources at lower costs, accelerating the adoption and sustainable development of artificial intelligence.
 
-## UVM 標準化虛擬機器服務
-在 iSunCoin 網絡中，UVM（Unified Virtual Machine）技術扮演著關鍵的角色，負責將分散在全球各地的閒置計算資源進行虛擬化管理。iSunCoin 網絡將大量閒置的機器抽象為算力單位 SUNS，並以容器化的概念將這些計算資源包裝成為可調配、標準化的算力單元。透過 UVM 虛擬化技術，應用程式可以被打包成為具體的算力單位，這些單位可以根據需求靈活組合成一個適當大小的算力容器。這樣的容器化設計使得不同應用程式可以在具有不同規模算力的虛擬機器上運行，並根據實際需求動態調整資源配置。
+## SUNS: A Standardized Unit for Measuring Computing Power
+In the iSunCoin network, the integration and standardization of computing resources are crucial for achieving efficient and scalable distributed computing. To facilitate unified measurement and utilization across different hardware and network conditions, we introduce SUNS (Scalable Unified Node Strength) as a standardized unit for measuring computing power. SUNS is more than just a simple number; it packages and unifies multi-dimensional resources such as CPU power, GPU power, memory capacity, storage space, and network bandwidth, providing developers and users with a clear and easy-to-operate virtualized resource unit.
 
-虛擬化技術的應用帶來了顯著的好處。首先，虛擬化可以實現資源的高效利用，使得閒置資源得以充分發揮，避免了硬體資源的浪費。其次，虛擬化提供了靈活性，應用程式不再受限於物理硬體的配置，可以根據當前負載或需求快速調整資源，實現動態擴展與縮減。再者，虛擬化能夠簡化系統管理，透過統一的管理界面，運維人員可以方便地監控與管理大量虛擬機器，提升了系統的可靠性與運營效率。最後，虛擬化還能提供更高的隔離性，確保不同應用程式之間的相互影響降至最低，從而提高了整體系統的穩定性和安全性。
+Through SUNS, iSunCoin can achieve resource standardization and virtualization, allowing computing resources to be precisely defined and efficiently configured. Within this framework, every participant, whether a provider or user, can measure, exchange, and use different computing services with the same standard, further accelerating the deployment of distributed applications and services. This not only improves resource allocation efficiency but also provides strong support for the system's scalability, flexibility, and cross-platform compatibility.
 
-這一虛擬化層的引入，讓 iSunCoin 網絡能夠在全球範圍內高效地運營，並根據需求動態調配計算資源，從而實現了一個極具彈性和擴展性的分佈式計算環境。
+## UVM: Standardized Virtual Machine Service
+In the iSunCoin network, UVM (Unified Virtual Machine) technology plays a crucial role in virtualizing and managing idle computing resources distributed globally. The iSunCoin network abstracts a large number of idle machines into SUNS computing units and packages these computing resources into configurable, standardized computing units using a containerization concept. Through UVM virtualization technology, applications can be packaged into specific computing units, which can be flexibly combined into a suitably sized computing container based on demand. This containerized design allows different applications to run on virtual machines with different scale computing power and dynamically adjust resource allocation based on actual needs.
 
-## UBN 串聯巨量機器的區塊鏈網路
-UBN（Unified Blockchain Network）是 iSunCoin 最關鍵的核心技術，這是一個專為支援巨量節點而設計的區塊鏈網路，能夠承載數以萬億計的計算節點。為了應對如此龐大的節點數量，UBN 採用了先進的 P2P 通訊技術，使得分佈在全球各地的數以千萬計的機器能夠高效、穩定地進行數據交換和同步。這一創新技術使得大規模節點之間的互動變得更為順暢與實時，極大提高了整個區塊鏈網絡的運行效率與可靠性，讓 iSunCoin 在大部分的情況下維持高效、安全、穩定。
+The application of virtualization technology brings significant benefits. First, virtualization enables efficient utilization of resources, allowing idle resources to be fully utilized and avoiding hardware waste. Second, virtualization provides flexibility. Applications are no longer limited by physical hardware configurations and can quickly adjust resources based on current loads or demands, enabling dynamic scaling. Third, virtualization simplifies system management. Through a unified management interface, operation and maintenance personnel can easily monitor and manage a large number of virtual machines, improving system reliability and operational efficiency. Finally, virtualization can also provide higher isolation, ensuring that the mutual influence between different applications is minimized, thereby improving the overall stability and security of the system.
 
-UBN 特別重視 Sharding（分片）技術，這是一種將區塊鏈網絡拆分為多個小型區塊的技術，能夠顯著提高網絡的擴展性和處理能力。每個分片能夠獨立處理一部分數據，從而減少了單一區塊鏈的負擔，使得整體系統可以在保持穩定的同時，承載更多的節點與交易。這不僅提升了交易處理的速度，還保證了區塊鏈網絡的高可擴展性，能夠應對未來數據量的激增。
-在共識機制方面，UBN 引入了一個快速同步的共識機制，旨在提升區塊鏈的效率，縮短交易確認時間，並確保整體網絡的一致性。這種機制允許節點之間更快速地達成共識，從而在分佈式環境中實現快速且可靠的數據同步。
+The introduction of this virtualization layer allows the iSunCoin network to operate efficiently on a global scale and dynamically allocate computing resources based on demand, resulting in a highly resilient and scalable distributed computing environment.
 
-此外，UBN 亦融合了同態加密技術，進一步增強了系統的隱私保護功能。該技術允許在不揭露數據內容的情況下進行加密運算，從而保護用戶的隱私，同時仍能保證數據的正確性與有效性。這一技術的應用，讓 iSunCoin 網絡在確保隱私安全的同時，能夠提供高效的數據處理和運算功能。
+## UBN: A Blockchain Network Connecting Billions of Machines
+UBN (Unified Blockchain Network) is the core technology of iSunCoin, designed to support a massive number of nodes. This blockchain network can accommodate trillions of computing nodes. To handle such a vast number of nodes, UBN employs advanced P2P communication technology, enabling millions of machines distributed globally to efficiently and stably exchange and synchronize data. This innovative technology facilitates smoother and more real-time interactions between large-scale nodes, significantly improving the overall operational efficiency and reliability of the blockchain network, ensuring iSunCoin's high performance, security, and stability under most circumstances.
 
-## 底層硬體支援
-截至 2024 年 12 月，主要的計算機算力架構可分為以下幾大類：
-1. x86 架構（Intel/AMD）x86 架構是當前最為普及的桌面和伺服器端處理器架構，廣泛應用於高性能計算、資料庫處理以及雲端服務領域。Intel 和 AMD 是該架構的主要提供商，其處理器通常具備出色的單核運算性能以及高效的多核處理能力。
-2. ARM 架構ARM 架構以其高效能、低功耗的特點，在移動設備、嵌入式系統以及數據中心領域逐漸獲得廣泛應用。ARM 處理器不僅適合於手持設備，也在雲端和邊緣計算領域中佔據越來越重要的位置。
-3. GPU 架構（NVIDIA/AMD）GPU 圖形處理單元架構在高效並行計算領域，尤其是機器學習、大數據分析以及區塊鏈運算中發揮了重要作用。NVIDIA 和 AMD 提供的 GPU 產品具有強大的並行處理能力，能夠加速大量計算密集型的任務。
-4. FPGA 架構FPGA 現場可編程門陣列是一種靈活的硬體架構，可根據特定需求進行定制化編程，尤其在高度專用的計算領域，如數據流處理、加密運算等，有著無可比擬的優勢。
-5. ASIC 架構ASIC 應用專用集成電路是一種專門為特定任務設計的硬體，常見於高效能區塊鏈挖礦、加密貨幣運算等領域。
-當下 x86 架構與 GPU 架構是目前最主流且數量最大的算力資源，iSunCoin 目前已完成此兩種架構的整合支援，未來也持續擴增其他架構支持。
+UBN places a particular emphasis on Sharding technology, a technique that divides the blockchain network into multiple smaller shards, significantly improving the network's scalability and throughput. Each shard can independently process a portion of data, reducing the burden on a single blockchain and enabling the overall system to accommodate more nodes and transactions while maintaining stability. This not only enhances transaction processing speed but also ensures the high scalability of the blockchain network, enabling it to handle future data surges.
 
-## 中層平台服務
-iSunCoin 的中層平台服務是整個分散式運算網絡的核心，負責將分散在各地的計算資源整合並虛擬化為可使用的算力單元。當機器安裝並啟動 iSunCoin 客戶端後，該機器便會成為 iSunCoin 網絡的一部分，並將其閒置的計算資源包含 CPU、GPU、記憶體、儲存空間、網路頻寬等貢獻給網絡，以形成全球範圍的 P2P 計算資源池。
+In terms of consensus mechanisms, UBN introduces a fast-synchronizing consensus mechanism aimed at improving blockchain efficiency, reducing transaction confirmation time, and ensuring overall network consistency. This mechanism allows nodes to reach consensus more quickly, enabling fast and reliable data synchronization in a distributed environment.
 
-在 iSunCoin 網絡中，每個節點會定期獲得來自區塊鏈的維護獎勳，該獎勳以 ISC 形式發放，作為節點參與計算資源提供的回報。這些 ISC 獎勳不僅是節點參與運作的激勳，還為整個網絡的穩定性和安全性提供了經濟激勳，促進了更多的機器加入網絡，提供更多的計算資源。
+Furthermore, UBN incorporates homomorphic encryption technology to further enhance the system's privacy protection capabilities. This technology allows encrypted computations to be performed without revealing the content of the data, thus protecting user privacy while ensuring data accuracy and validity. The application of this technology enables the iSunCoin network to provide efficient data processing and computing functions while ensuring privacy and security.
 
-閒置的算力資源進行虛擬化轉換為以 SUNS 為單位的算力容器後，這些虛擬化的算力容器可以根據用戶的需求靈活調整大小，用戶透過支付 ISC 依小時為單位來租用這些容器運行各種計算任務。支付的 ISC 大部分會分配給提供算力的節點，作為使用該資源的回報。而小部分的 ISC 則會用作稽核獎勳，平分給整個 iSunCoin 網絡中的所有節點，以鼓勵節點積極參與網絡的監控與維護，並確保系統的運行透明性和可靠性。
+## Under Layer Hardware Support
+As of December 2024, the primary computing architectures can be categorized into the following:
 
-透過中層平台服務，得以支持人工智能蓬勃發展下的大量算力需求，同時社群也能輕鬆加入貢獻算力的節點同時獲得經濟回報，確保了 iSunCoin 網絡資源的有效運作。節點之間透過租賃 SUNS 容器共享計算資源，同時也通過區塊鏈的透明和去中心化特性保證了整體運營的公平性與安全性。
+1. x86 Architecture (Intel/AMD): The x86 architecture is the most prevalent processor architecture for desktops and servers, widely used in high-performance computing, database processing, and cloud services. Intel and AMD are the primary providers of this architecture, and their processors typically offer excellent single-core performance and efficient multi-core processing capabilities.
+2. ARM Architecture: The ARM architecture has gained widespread adoption in mobile devices, embedded systems, and data centers due to its high efficiency and low power consumption. ARM processors are not only suitable for handheld devices but also play an increasingly important role in cloud and edge computing.
+3. GPU Architecture (NVIDIA/AMD): GPU (Graphics Processing Unit) architectures play a crucial role in high-performance parallel computing, particularly in machine learning, big data analytics, and blockchain computing. NVIDIA and AMD offer GPUs with powerful parallel processing capabilities, capable of accelerating a wide range of computationally intensive tasks.
+4. FPGA Architecture: Field-Programmable Gate Arrays (FPGAs) are flexible hardware architectures that can be customized for specific tasks, offering unparalleled advantages in highly specialized computing areas such as data stream processing and cryptographic operations.
+5. ASIC Architecture: Application-Specific Integrated Circuits (ASICs) are hardware designed specifically for a particular task, commonly used in high-performance blockchain mining and cryptocurrency computing.
 
-## 上層應用部署
-iSunCoin 的上層應用部署透過 UAI 規格提供了一個靈活且高效的虛擬化平台，使得應用程式可以跨越物理伺服器與地理位置的限制，實現更高效的運行與資源利用，並大大降低了傳統伺服器所面臨的硬體依賴性和資源瓶頸。
+Currently, x86 and GPU architectures are the most mainstream and abundant computing resources. iSunCoin has already completed the integration support for these two architectures and will continue to expand support for other architectures in the future.
 
-UAI（Unified Application Image）是一種通用的映像檔格式，旨在標準化不同伺服器架構、作業系統與應用之間的組織架構。透過 UAI 規格，使用者可以將現有伺服器的運行環境轉換為符合 UVM 標準的映像檔格式，並將其上傳至 iSunCloud 的資料庫中。這些映像檔不僅保留了應用程式的完整運行狀態，還能隨時遷移至合適的節點上運作，確保在 iSunCoin 網絡中虛擬化運行時的高效與穩定。
+## Middle Layer Platform Services
+The iSunCoin middle Layer platform services form the core of the entire distributed computing network, responsible for integrating and virtualizing distributed computing resources into usable computing units. Once a machine installs and starts the iSunCoin client, it becomes part of the iSunCoin network and contributes its idle computing resources, including CPU, GPU, memory, storage, and network bandwidth, to form a global P2P computing resource pool.
 
-映像檔上傳後，使用者只需定期支付足夠的 ISC 作為租賃費用，便可使其虛擬化的伺服器在 iSunCoin 網絡中運行。iSunCoin 利用其先進的虛擬化平台，將應用程式的運行負載分配到全球範圍內的節點上，實現跨地理位置、跨硬體架構的靈活部署和運行。這不僅提高了資源的利用率，還確保了伺服器運行的高可用性和低延遲。
-與傳統伺服器相比，虛擬化伺服器在 iSunCoin 上運行使得應用程式的運行環境更加靈活，能夠根據需求動態調整計算資源，實現即時擴展或縮減，避免了傳統伺服器在負載波動時的資源浪費或不足。同時，iSunCoin 的分佈式架構使得虛擬化伺服器能夠在多個物理位置的節點間分散運行備援，不僅提升了服務的可靠性和容錯能力，還能顯著降低單一故障點與規避區域性重大災難的風險。
+In the iSunCoin network, each node periodically receives maintenance rewards from the blockchain, which are issued in the form of ISC as a reward for the node's contribution of computing resources. These ISC rewards not only serve as an incentive for nodes to participate in operations but also provide economic incentives for the overall stability and security of the network, encouraging more machines to join the network and provide more computing resources.
 
-透過全球分佈式計算資源，虛擬化伺服器可以根據用戶的位置，將計算工作負載調度到地理位置更近的節點上，可以顯著縮短不同地區執行應用程式的反應時間，大幅提升數據處理速度與用戶體驗。這種基於需求動態調度的資源管理，讓 iSunCoin 在運行效率、可擴展性和可靠性方面，遠超傳統的單一伺服器架構。
-以下介紹幾個適用於 iSunCoin 的開源人工智能應用服務：
+After idle computing resources are virtualized into computing containers measured in SUNS, these virtualized computing containers can be flexibly resized according to user needs. Users can rent these containers to run various computing tasks by paying ISC on an hourly basis. Most of the paid ISC is distributed to the nodes providing the computing power as a reward for using the resources. A small portion of the ISC is used as auditing rewards and is evenly distributed to all nodes in the iSunCoin network to encourage nodes to actively participate in network monitoring and maintenance and ensure the transparency and reliability of the system.
 
-### opensource Llama
-Llama 是由 Meta 發布的開源大語言模型，專為自然語言處理任務設計，涵蓋文本生成、問題回答、翻譯等多種應用場景。作為一個開源模型，Llama 允許開發者進行自定義調整，並且能夠高效處理大量語言數據。在 iSunCoin 網絡中，Llama 作為人工智能應用服務的一部分，運行資源需求為 30 SUNS，能夠在全球分佈式計算資源的支持下，提供彈性和高效的運算能力。
-透過 智能合約 的支持，部署在 iSunCoin 上的Llama 可以和其他應用服務進行無縫整合。智能合約提供了一個自動執行、無需第三方介入的協議框架，使得不同應用服務能夠與 Llama 模型進行實時交互與數據交換。例如，企業可以利用智能合約將 Llama 模型的語言理解能力與其他商業應用結合，實現自動客服、語言生成型應用或智能推薦系統等服務，這些服務可以根據業務需求進行定制與擴展。
+Through middleware platform services, iSunCoin can support the massive computing power demands of the booming artificial intelligence industry. At the same time, the community can easily join as nodes to contribute computing power and receive economic rewards, ensuring the efficient operation of iSunCoin network resources. Nodes share computing resources by renting SUNS containers, while the transparency and decentralization of the blockchain guarantee the fairness and security of overall operations.
 
-智能合約的引入，讓 iSunCoin 上的 Llama 具備了高度的靈活性和可擴展性，並能夠與各種應用服務進行高效集成，進而提升整體系統的運行效率與功能豐富度。開發者能夠在無需依賴中心化平台的情況下，設計出更具創新性和可靠性的 AI 解決方案，並利用 iSunCoin 的分佈式計算資源進行部署，與各類業務需求深度融合，為用戶提供更為多樣化和先進的人工智能解決方案。
+## Upper Layer Application Deployment
+iSunCoin's upper layer application deployment provides a flexible and efficient virtualization platform through the UAI specification, enabling applications to transcend physical server and geographic location limitations, achieving more efficient operation and resource utilization, and significantly reducing the hardware dependency and resource bottlenecks of traditional servers.
 
-### opensource CosyVoice
-CosyVoice 是由阿里巴巴推出的開源語音合成模型，旨在為開發者提供高品質、自然流暢的語音合成功能。該模型基於先進的深度學習技術，能夠生成自然的語音，適用於各種語音應用場景，如智能助手、語音導航、語音閱讀等，運行資源需求為 5 SUNS。
+UAI (Unified Application Image) is a universal image format designed to standardize the organization of different server architectures, operating systems, and applications. Through the UAI specification, users can convert the running environment of existing servers into an image format that complies with the UVM standard and upload it to the iSunCloud database. These images not only preserve the complete running state of the application but can also be migrated to suitable nodes for operation at any time, ensuring efficient and stable virtualization operation in the iSunCoin network.
 
-其生成後的語音檔案將存儲在 iSunCoin 的網絡儲存空間中，方便進行後續的整合和使用。用戶可根據具體需求下載或透過智能合約將語音合成結果與其他系統進行無縫串接，例如嵌入到應用中或用於語音播放服務。智能合約的引入，能夠使語音生成過程更加自動化，並確保操作過程的透明性和安全性，實現更具創新性和實用性的語音應用。
+After uploading the image, users only need to pay a sufficient amount of ISC as a rental fee to run their virtualized servers in the iSunCoin network. iSunCoin utilizes its advanced virtualization platform to distribute the application's workload to nodes worldwide, enabling flexible deployment and operation across geographic locations and hardware architectures. This not only improves resource utilization but also ensures high availability and low latency of server operation.
 
-### opensource FLUX.1
-FLUX.1 是由 Black Forest Labs 推出的文生圖模型，專為生成高品質圖像而設計。該模型基於先進的生成對抗網絡（GANs）和深度學習技術，能夠根據文字描述自動生成與之匹配的高解析度圖像。FLUX.1 支援多種語言描述，並且能夠在各種創意領域中應用，如藝術創作、設計、廣告和虛擬世界建設等，運行資源需求為 30 SUNS。
+Compared to traditional servers, running virtualized servers on iSunCoin makes the application's running environment more flexible, allowing dynamic adjustment of computing resources according to demand, enabling instant scaling up or down and avoiding resource waste or shortages in traditional servers during load fluctuations. At the same time, iSunCoin's distributed architecture enables virtualized servers to run in backup across nodes in multiple physical locations, not only improving service reliability and fault tolerance but also significantly reducing the risk of single points of failure and avoiding regional disasters.
 
-FLUX.1 的運行利用 iSunCoin 的分佈式計算平台，能夠在全球範圍內的節點上分布計算，確保快速且高效的圖像生成過程。無論是創建藝術作品，還是生成設計素材，用戶都能夠輕鬆透過 FLUX.1 將文字描述轉換為視覺圖像。此技術特別適合需要大量創意輸出的行業，如廣告設計、電子商務、電影製作及遊戲開發等。
+Through globally distributed computing resources, virtualized servers can schedule computing workloads to nodes closer to the user's location, significantly reducing response times for executing applications in different regions and greatly improving data processing speed and user experience. This demand-driven dynamic resource management makes iSunCoin far superior to traditional single-server architectures in terms of operational efficiency, scalability, and reliability.
 
-生成的圖像將存儲在 iSunCoin 的網絡儲存空間中，並可進行後續處理、修改或直接用於應用中。用戶可以透過智能合約將 FLUX.1 生成的圖像與其他應用服務進行串接，使得圖像自動集成到商業流程中，為創意產業提供可擴展、創新的解決方案。
+The following introduces several open-source artificial intelligence application services suitable for iSunCoin:
 
-### DO 陽光智能社群
-Dream Out 陽光智能社群是運行在 iSunCoin 網絡上的一個創新社交平台，將 AI 技術與社交互動深度融合，讓用戶能夠更自由、更創意地表達自己。
+### Open-source Llama
+Llama is an open-source large language model released by Meta, specifically designed for natural language processing tasks, covering a wide range of applications such as text generation, question answering, and translation. As an open-source model, Llama allows developers to customize it and can efficiently process large amounts of language data. In the iSunCoin network, Llama operates as part of an AI application service, requiring 30 SUNS of computing resources and can provide flexible and efficient computing capabilities with the support of globally distributed computing resources.
 
-在 Dream Out 上，用戶可以透過文字敘述轉換為圖片或影片，這一功能使得想像力與創意能夠迅速轉化為視覺內容。無論是描述一個虛構的場景、創建個人化的藝術作品，還是將日常生活的點滴轉換成視覺化的故事，用戶都能輕鬆地將文字敘述轉化為令人驚嘆的圖片或短影片。這一過程是通過智能合約與其他 AI 模型的無縫整合實現的，這些 AI 模型能夠根據用戶的文字指令生成對應的圖像或視頻，進一步豐富用戶的表達方式，讓社交互動更具創意性和視覺吸引力。
+With the support of smart contracts, Llama deployed on iSunCoin can seamlessly integrate with other application services. Smart contracts provide a self-executing, trustless protocol framework, enabling different application services to interact with the Llama model in real-time and exchange data. For example, enterprises can leverage smart contracts to combine the language understanding capabilities of the Llama model with other business applications to implement automated customer service, language generation applications, or intelligent recommendation systems. These services can be customized and expanded according to business needs.
 
-此外，Dream Out 還提供了更為智能的社交互動方式。平台利用 iSunCoin 的強大計算資源，為用戶提供高效、個性化的內容推薦服務，幫助用戶發現感興趣的社群、話題和朋友，並鼓勵用戶根據自己的興趣和需求創建內容。無論是個人日常的分享，還是專業領域的知識交流，Dream Out 都能提供多元化的社交場景，讓每個用戶都能在其中找到屬於自己的位置。
+The introduction of smart contracts makes Llama on iSunCoin highly flexible and scalable, and it can be efficiently integrated with various application services, thereby improving the overall system's operational efficiency and feature richness. Developers can design more innovative and reliable AI solutions without relying on centralized platforms, and deploy them using iSunCoin's distributed computing resources, deeply integrating with various business needs to provide users with more diverse and advanced AI solutions.
 
-用戶生成的圖片和影片內容會被存儲在 iSunCoin 的分佈式儲存空間中，並且可以透過智能加密技術管理，確保內容的安全性和隱私性，也促進了用戶之間的互動與共享。每個用戶都可以控制自己的創作，決定是否公開或共享給其他用戶，並且可以根據需求進行商業化運營。Dream Out 提供了一個全新的社交體驗，幫助用戶更加自由和富有創意地表達自我，並加強了社群互動的深度與廣度。
+### Open-source CosyVoice
+CosyVoice is an open-source text-to-speech model developed by Alibaba, aimed at providing developers with high-quality, natural-sounding speech synthesis capabilities. Based on advanced deep learning techniques, this model can generate natural speech suitable for various voice application scenarios, such as intelligent assistants, voice navigation, and audio reading, with a resource requirement of 5 SUNS.
 
-### MI 陽光智能媒體
-Midea 陽光智能媒體是運行在 iSunCoin 上的媒體平台，旨在提供自動化新聞生成和多媒體內容創作功能。通過結合網路爬蟲技術，Midea 能夠實時收集世界各地發生的事件，並自動生成高質量的新聞稿。無論是全球新聞、地方事件還是特定領域的資訊，Midea 都能夠迅速分析和整理，將其轉化為結構化的內容，並根據需求生成新聞稿、廣播和影片等多媒體格式。
+The generated audio files will be stored in iSunCoin's network storage space for subsequent integration and use. Users can download the synthesized speech or seamlessly connect it with other systems through smart contracts, such as embedding it into applications or using it for voice playback services. The introduction of smart contracts can automate the speech generation process and ensure the transparency and security of operations, enabling more innovative and practical voice applications.
 
-Midea 整合人工智能技術，將爬蟲收集得來的數據進行歸納，AI 系統會基於時間、地區和事件類型等因素，將新聞稿重新整合並轉換為深度報告。這些報告不僅能夠呈現事實，更會深入挖掘事件的背景和影響，幫助讀者對全球發生的重大事件進行全面了解。
+### Open-source FLUX.1
+FLUX.1 is a text-to-image model developed by Black Forest Labs, designed to generate high-quality images. Based on advanced Generative Adversarial Networks (GANs) and deep learning techniques, the model can automatically generate high-resolution images that match text descriptions. FLUX.1 supports multiple language descriptions and can be applied in various creative fields such as art creation, design, advertising, and virtual world construction, with a resource requirement of 30 SUNS.
 
-Midea 的一大特點是其開放性。任何人都可以在平台上創建自己的頻道，並規劃自己的帶狀節目。無論是關於時事、科技、財經還是文化，創作者都可以利用 Midea 提供的資源和工具，快速生成內容並發布。平台支持用戶自定義節目結構、設置播出時間，並通過 Midea 的分佈式計算和儲存系統實現節目的高效分發。
+FLUX.1 leverages iSunCoin's distributed computing platform to distribute computations across nodes worldwide, ensuring a fast and efficient image generation process. Whether creating artwork or generating design assets, users can easily transform text descriptions into visual images through FLUX.1. This technology is particularly suitable for industries that require a large amount of creative output, such as advertising design, e-commerce, film production, and game development.
 
-Midea 陽光智能媒體最大化利用 iSunCoin 的強大分佈式計算能力，提供了一個創新的新聞生成、報告編輯和影音創作平台。這不僅使得全球事件的報導更加高效和多樣化，還為創作者提供了靈活的內容生成與發佈功能，實現了媒體產業的全新模式。
+Generated images will be stored in iSunCoin's network storage space and can be further processed, modified, or directly used in applications. Users can connect FLUX.1-generated images with other application services through smart contracts, enabling images to be automatically integrated into business processes, providing scalable and innovative solutions for the creative industry.
 
-### FA 陽光智能會計
-陽光智能會計是運行在 iSunCoin 上的人工智能會計審計平台，專為實現自動化和智能化的會計處理而設計。通過先進的人工智能技術，這個平台不僅能夠提供精確的會計報告、賬目核對、稅務計算等服務，還能夠實現 持續審計，這使得企業的財務流程更加透明、可靠，並且符合監管要求。
+### DO iSun Smart Community
+Dream Out iSun Smart Community is an innovative social platform operating on the iSunCoin network, deeply integrating AI technology with social interaction, allowing users to express themselves more freely and creatively.
 
-陽光智能會計透過全年無休的人工智能技術實現持續審計，它使得企業能夠在整個財務週期內持續監控和驗證財務數據的準確性與合規性。傳統的審計通常是基於過去一段時間內的數據進行檢查，而持續審計則是通過實時數據流的方式，對每一筆交易和財務活動進行自動檢查和分析，保證財務數據的即時合規性和準確性。這樣一來，企業可以及時發現和修正錯誤或不規範的行為，減少審計風險並確保合規。
+On Dream Out, users can transform text descriptions into images or videos, enabling imagination and creativity to be quickly transformed into visual content. Whether describing a fictional scene, creating personalized artwork, or transforming daily life into visual stories, users can easily transform text descriptions into stunning images or short videos. This process is achieved through the seamless integration of smart contracts and other AI models, which can generate corresponding images or videos based on user text instructions, further enriching users' expression and making social interaction more creative and visually appealing.
 
-在陽光智能會計平台中，從記帳、稽核、到出具會計師意見都可以透過人工智能技術，並與外部監管機構的規範數據，以及歷史上所有經濟數據與公開財務報告數據進行對比，從而實現對整個財務最全面的多維度觀察與合理性分析。系統會根據預先設定的審計規則自動識別潛在的問題，並生成相應的警報或報告，提醒企業管理層需要關注的事項。這些審計報告可以在任意時間生成，並且始終保持最新狀態。
+In addition, Dream Out provides a more intelligent social interaction mode. The platform utilizes iSunCoin's powerful computing resources to provide users with efficient and personalized content recommendation services, helping users discover interesting communities, topics, and friends, and encouraging users to create content based on their interests and needs. Whether it's sharing personal daily life or exchanging knowledge in professional fields, iSunCoin can provide diverse social scenarios, allowing every user to find their place.
 
-iSunCoin 提供了同態加密技術，所有財務數據和審計記錄都會在網路上加密保存，確保了數據的不可篡改性，還使得審計過程更加透明和可追溯。每一筆交易和每一份報告都能被追蹤，並且能夠在區塊鏈中查閱歷史記錄，從而提升企業內外部的信任度和透明度。
+User-generated images and video content will be stored in iSunCoin's distributed storage space and can be managed through intelligent encryption technology to ensure content security and privacy, and also promote interaction and sharing among users. Each user can control their own creations, decide whether to make them public or share them with other users, and commercialize them as needed. iSunCoin provides a new social experience, helping users express themselves more freely and creatively, and strengthening the depth and breadth of community interaction.
 
-企業可以根據需求支付 ISC 來使用陽光智能會計服務，自動化記帳與產生會計報表，媒合會計師簽證，生成審計報告與財務報告等。平台提供的智能合約功能，使得企業能夠與外部記賬士事務所、會計師事務所、審計機構，在最大化保障隱私的前提下，輕鬆實現數據共享與協作，無需繁瑣的人工介入。
+### MI iSun Smart Media
+Midea iSun Smart Media is a media platform operating on the iSunCoin network, aimed at providing automated news generation and multimedia content creation capabilities. By combining web crawling technology, Midea can collect real-time events happening around the world and automatically generate high-quality news articles. Whether it's global news, local events, or information in specific fields, Midea can quickly analyze and organize it into structured content and generate news articles, broadcasts, and videos in various multimedia formats based on demand.
 
-## 未來展望
-隨著科技的迅速發展，iSunCoin 預見到一個更加智能、高效的未來。在這樣的未來中，分佈式計算、區塊鏈技術、人工智能和智能合約將深刻影響各行各業，並重塑全球經濟活動。iSunCoin 作為一個先進的分佈式計算平台，將繼續推動這些技術的融合與創新，實現更高效的資源共享與數據處理，並為用戶提供更加全面的服務。
+Midea integrates artificial intelligence technology to summarize the data collected by the crawler. The AI system will reorganize and convert news articles into in-depth reports based on factors such as time, region, and event type. These reports not only present facts but also delve deeper into the background and impact of events, helping readers gain a comprehensive understanding of major global events.
 
-未來，iSunCoin 將進一步優化其分佈式架構，支持更多的硬體平台和計算資源，實現更加無縫的全球資源整合。這將使得 iSunCoin 能夠支持更高效的大規模應用場景，並滿足全球用戶對高效能計算和數據存儲的需求。
+One of the biggest features of Midea is its openness. Anyone can create their own channel on the platform and plan their own programs. Whether it's about current events, technology, finance, or culture, creators can use the resources and tools provided by Midea to quickly generate content and publish it. The platform supports users to customize program structures, set broadcast times, and achieve efficient distribution of programs through Midea's distributed computing and storage system.
 
-在人工智能領域，iSunCoin 將繼續加強與開源 AI 技術的整合，推動更多創新型 AI 應用的開發與部署。隨著語音識別、圖像生成、機器學習等技術的不斷突破，iSunCoin 將為開發者提供更加智能、靈活的開發平台，幫助他們打造出更具創新性的 AI 服務，並實現跨行業、跨領域的應用。
+Midea iSun Smart Media maximizes iSunCoin's powerful distributed computing capabilities, providing an innovative platform for news generation, report editing, and audiovisual creation. This not only makes reporting on global events more efficient and diverse but also provides creators with flexible content generation and publishing functions, realizing a new model for the media industry.
 
-在區塊鏈技術方面，iSunCoin 會加強其區塊鏈網絡的穩定性和可擴展性，實現更高效的數據處理和跨區塊鏈協作。隨著區塊鏈技術的成熟，iSunCoin 將成為更多業務場景的基礎設施，從金融到物流、從醫療到公共服務，區塊鏈技術的應用將無處不在，並改變我們對數據的管理和使用方式。
+### FA iSun Smart Accounting
+iSun Smart Accounting is an AI-powered audit platform operating on the iSunCoin network, designed for automated and intelligent accounting processes. With advanced AI technology, this platform can not only provide accurate accounting reports, account reconciliation, and tax calculations but also enable continuous auditing, making enterprise financial processes more transparent, reliable, and compliant with regulations.
 
-此外，iSunCoin 在未來還計劃開展更多與全球企業和開發者的合作，推動跨國界的數據共享與協作。iSunCoin 將成為企業數字化轉型和智能化升級的最佳夥伴，通過高效的資源管理和先進的技術支持，幫助企業在全球化競爭中脫穎而出。
+iSun Smart Accounting achieves continuous auditing through 24/7 AI technology, allowing enterprises to continuously monitor and verify the accuracy and compliance of financial data throughout the entire financial cycle. Traditional auditing typically involves examining data from a past period, while continuous auditing uses real-time data streams to automatically check and analyze every transaction and financial activity, ensuring the immediate compliance and accuracy of financial data. This allows enterprises to promptly identify and correct errors or non-compliant behaviors, reducing audit risks and ensuring compliance.
+
+In the iSun Smart Accounting platform, from bookkeeping and auditing to issuing auditor's opinions, all processes can be automated through AI technology and compared with external regulatory data, as well as historical economic data and public financial reports, enabling the most comprehensive multi-dimensional observation and rationality analysis of the entire financial situation. The system automatically identifies potential issues based on preset audit rules and generates corresponding alerts or reports to remind enterprise management of matters that need attention. These audit reports can be generated at any time and are always up-to-date.
+
+iSunCoin provides homomorphic encryption technology, and all financial data and audit records are encrypted and stored online, ensuring data integrity and making the audit process more transparent and traceable. Every transaction and every report can be tracked, and historical records can be checked on the blockchain, thereby increasing the trust and transparency of both internal and external enterprises.
+
+Enterprises can pay ISC to use the iSun Smart Accounting service to automate bookkeeping and generate accounting reports, match auditor signatures, and generate audit reports and financial statements. The platform's smart contract function allows enterprises to easily share data and collaborate with external accounting firms, auditing firms, and audit institutions, with maximum privacy protection, eliminating the need for cumbersome manual intervention.
+
+## Future
+With the rapid development of technology, iSunCoin envisions a smarter and more efficient future. In this future, distributed computing, blockchain technology, artificial intelligence, and smart contracts will profoundly impact various industries and reshape global economic activities. As an advanced distributed computing platform, iSunCoin will continue to promote the integration and innovation of these technologies, enabling more efficient resource sharing and data processing, and providing users with more comprehensive services.
+
+In the future, iSunCoin will further optimize its distributed architecture, supporting more hardware platforms and computing resources to achieve more seamless global resource integration. This will enable iSunCoin to support more efficient large-scale application scenarios and meet the needs of global users for high-performance computing and data storage.
+
+In the field of artificial intelligence, iSunCoin will continue to strengthen its integration with open-source AI technologies, promoting the development and deployment of more innovative AI applications. With the continuous breakthroughs in speech recognition, image generation, machine learning, and other technologies, iSunCoin will provide developers with a smarter and more flexible development platform, helping them create more innovative AI services and achieve cross-industry and cross-domain applications.
+
+In terms of blockchain technology, iSunCoin will enhance the stability and scalability of its blockchain network to achieve more efficient data processing and cross-blockchain collaboration. With the maturity of blockchain technology, iSunCoin will become the infrastructure for more business scenarios, from finance to logistics, from healthcare to public services, where blockchain technology applications will be ubiquitous and change the way we manage and use data.
+
+In addition, iSunCoin plans to carry out more collaborations with global enterprises and developers in the future to promote cross-border data sharing and collaboration. iSunCoin will become the best partner for enterprises' digital transformation and intelligent upgrading, helping enterprises stand out in global competition through efficient resource management and advanced technology support.
