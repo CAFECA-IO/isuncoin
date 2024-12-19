@@ -5,9 +5,9 @@ iSunCoin 是相容以太坊的區塊鏈，基於以太坊 v1.11.6 為基礎，�
 [English](/deploy.md)｜繁體中文
 
 ## 下載 iSunCoin
-[Windows](https://isuncoin.com/download/latest/isuncoin-windows.zip)
-[Linux](https://isuncoin.com/download/latest/isuncoin-linux)
-[Mac](https://isuncoin.com/download/latest/isuncoin-mac)
+[Windows](https://isuncoin.com/download/latest/isuncoin-gui-windows.zip)
+[Linux](https://isuncoin.com/download/latest/isuncoin-gui-linux.appimage)
+[Mac](https://isuncoin.com/download/latest/isuncoin-gui-mac.dmg)
 
 ## 部署 iSunCoin
 last updated on 2024-06-18

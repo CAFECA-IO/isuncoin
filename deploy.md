@@ -5,9 +5,9 @@ This repository is a fork of Ethereum's go-ethereum repository. We expand on v1.
 English｜[繁體中文](/deploy_zh.md)
 
 ## Download iSunCoin
-[Windows](https://isuncoin.com/download/latest/isuncoin-windows.zip)
-[Linux](https://isuncoin.com/download/latest/isuncoin-linux)
-[Mac](https://isuncoin.com/download/latest/isuncoin-mac)
+[Windows](https://isuncoin.com/download/latest/isuncoin-gui-windows.zip)
+[Linux](https://isuncoin.com/download/latest/isuncoin-gui-linux.appimage)
+[Mac](https://isuncoin.com/download/latest/isuncoin-gui-mac.dmg)
 
 ## Deploy iSunCoin
 last updated on 2024-06-18
