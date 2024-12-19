@@ -2,7 +2,7 @@
 
 This repository is a fork of Ethereum's go-ethereum repository. We expand on v1.11.6 by adding functionalities that enable smart contracts to compute on encrypted data.
 
-[切換至中文](/deploy_zh.md)
+English｜[繁體中文](/deploy_zh.md)
 
 ## Download iSunCoin
 [Windows](https://isuncoin.com/download/latest/isuncoin-windows.zip)

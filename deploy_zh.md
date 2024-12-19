@@ -2,7 +2,7 @@
 
 iSunCoin 是相容以太坊的區塊鏈，基於以太坊 v1.11.6 為基礎，添加了零知識證明的技術，讓 iSunCoin 能在智能合約上實現隱私數據運算。
 
-[Switch to English](/deploy.md)
+[English](/deploy.md)｜繁體中文
 
 ## 下載 iSunCoin
 [Windows](https://isuncoin.com/download/latest/isuncoin-windows.zip)

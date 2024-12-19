@@ -1,5 +1,5 @@
 # iSunCoin
-<center>English | [繁體中文](readme_zh.md)</center>
+English｜[繁體中文](readme_zh.md)
 ## Background
 With the rapid development of artificial intelligence, the global demand for computing power has been steadily increasing. From early deep learning model training to today's large language models and image generation techniques, AI applications are becoming increasingly widespread across various industries. These technologies rely heavily on powerful computing capabilities. However, despite the surging demand for computing power driven by AI, hardware costs have not increased significantly.
 
