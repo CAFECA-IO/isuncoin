@@ -38,6 +38,7 @@ cd /workspace
 git clone https://github.com/CAFECA-IO/isuncoin
 cd isuncoin
 make isuncoin
+sudo ln -s /workspace/isuncoin/build/bin/isuncoin /usr/local/bin/isuncoin
 ```
 
 ### Building Windows EXE
