@@ -239,6 +239,8 @@ func init() {
 		snapshotCommand,
 		// See verkle.go
 		verkleCommand,
+		// See suns.go
+		sunsCommand,
 	}
 	sort.Sort(cli.CommandsByName(app.Commands))
 
