@@ -108,7 +108,7 @@ curl --location 'localhost' \
 iSunCoin
 
 新增 RPC 網址:
-https://isuncoin.baifa.io
+https://mainnet.isuncoin.com
 
 Chain ID:
 8017
