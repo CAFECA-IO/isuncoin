@@ -1,3 +1,5 @@
+//go:build usb
+
 // Copyright 2017 The go-ethereum Authors
 // This file is part of the go-ethereum library.
 //
@@ -31,7 +33,7 @@ import (
 	"github.com/ethereum/go-ethereum/core/types"
 	"github.com/ethereum/go-ethereum/crypto"
 	"github.com/ethereum/go-ethereum/log"
-	"github.com/karalabe/usb"
+	"github.com/google/gousb"
 )
 
 // Maximum time between wallet health checks to detect USB unplugs.
@@ -79,8 +81,8 @@ type wallet struct {
 	driver driver        // Hardware implementation of the low level device operations
 	url    *accounts.URL // Textual URL uniquely identifying this wallet
 
-	info   usb.DeviceInfo // Known USB device infos about the wallet
-	device usb.Device     // USB device advertising itself as a hardware wallet
+	info   *gousb.DeviceDesc // Known USB device infos about the wallet
+	device *gousb.Device     // USB device advertising itself as a hardware wallet
 
 	accounts []accounts.Account                         // List of derive accounts pinned on the hardware wallet
 	paths    map[common.Address]accounts.DerivationPath // Known derivation paths for signing operations
