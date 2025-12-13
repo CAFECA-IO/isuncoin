@@ -241,6 +241,8 @@ func init() {
 		verkleCommand,
 		// See suns.go
 		sunsCommand,
+		// See flops.go
+		flopsCommand,
 	}
 	sort.Sort(cli.CommandsByName(app.Commands))
 
