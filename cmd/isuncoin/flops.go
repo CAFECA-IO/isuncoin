@@ -3,16 +3,10 @@
  * ----------------------------
  * Description:
  * This program calculates the total compute power of a machine in terms of FLOPS (Floating Point Operations Per Second).
- * It benchmarks CPU using Gorgonia (Go native) and NPU using Apple's Accelerate framework (CGO).
+ * It benchmarks CPU using Gorgonia (Go native) and NPU using Apple's Accelerate framework (CGO) on supported platforms.
  */
 
 package main
-
-/*
-#cgo LDFLAGS: -framework Accelerate
-#include <Accelerate/Accelerate.h>
-*/
-import "C"
 
 import (
 	"fmt"
@@ -45,7 +39,7 @@ func runFlops(ctx *cli.Context) error {
 	gpuFlops := calculateGPUFlops()
 	fmt.Printf("%.2f GFLOPS\n", gpuFlops/1e9)
 
-	// 3. NPU Benchmark (Accelerate/BLAS)
+	// 3. NPU Benchmark (Accelerate/BLAS on macOS, 0 elsewhere)
 	fmt.Print("Benchmarking NPU (Apple Accelerate)... ")
 	npuFlops := calculateNPUFlops()
 	fmt.Printf("%.2f GFLOPS\n", npuFlops/1e9)
@@ -91,43 +85,6 @@ func calculateCPUFlops() float64 {
 	elapsed := time.Since(start).Seconds()
 
 	// FLOPs for Matrix Multiplication of N x N is 2 * N^3 (approximately)
-	ops := 2.0 * float64(N) * float64(N) * float64(N)
-	return ops / elapsed
-}
-
-func calculateNPUFlops() float64 {
-	// Use macOS Accelerate Framework (BLAS) via CGO
-	// This often leverages the AMX (Apple Matrix Coprocessor) on M-series chips
-	N := C.int(2048) // Larger matrix for Accelerate
-	alpha := C.double(1.0)
-	beta := C.double(0.0)
-
-	// Allocate memory in C-compatible way (or just pass slices, CGO handles pinning usually, but large arrays are cleaner managed)
-	// For simplicity, we create slices and pass ptrs.
-	size := int(N * N)
-	a := make([]float64, size)
-	b := make([]float64, size)
-	c := make([]float64, size)
-
-	// Initialize
-	for i := 0; i < size; i++ {
-		a[i] = rand.Float64()
-		b[i] = rand.Float64()
-	}
-
-	start := time.Now()
-
-	// cblas_dgemm(Order, TransA, TransB, M, N, K, alpha, A, lda, B, ldb, beta, C, ldc)
-	// C = alpha * A * B + beta * C
-	// RowMajor = 101, NoTrans = 111
-	C.cblas_dgemm(101, 111, 111, N, N, N, alpha,
-		(*C.double)(&a[0]), N,
-		(*C.double)(&b[0]), N,
-		beta,
-		(*C.double)(&c[0]), N)
-
-	elapsed := time.Since(start).Seconds()
-
 	ops := 2.0 * float64(N) * float64(N) * float64(N)
 	return ops / elapsed
 }
