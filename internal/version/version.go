@@ -100,7 +100,7 @@ func Info() (version, vcs string) {
 // package it falls back to the hardcoded values in the params package.
 func versionInfo(info *debug.BuildInfo) string {
 	// If the main package is from our repo, prefix version with "isuncoin".
-	info.Main.Version = "1.12.2"
+	info.Main.Version = "1.12.3"
 	if strings.HasPrefix(info.Path, ourPath) {
 		// Info: (20250822 - Luphia) info.Main.Version -> https://github.com/CAFECA-IO/isuncoin-electron/blob/main/package.json
 		return fmt.Sprintf("isuncoin %s", info.Main.Version)

@@ -39,6 +39,7 @@ import (
 	"github.com/ethereum/go-ethereum/log"
 	"github.com/ethereum/go-ethereum/metrics"
 	"github.com/ethereum/go-ethereum/node"
+	"github.com/ethereum/go-ethereum/params"
 
 	// Force-load the tracer engines to trigger registration
 	_ "github.com/ethereum/go-ethereum/eth/tracers/js"
@@ -204,6 +205,10 @@ var app = flags.NewApp("the go-ethereum command line interface")
 
 func init() {
 	// Initialize the CLI app and start Geth
+	cli.VersionPrinter = func(c *cli.Context) {
+		fmt.Printf("%s version %s\n", c.App.Name, params.Version)
+	}
+
 	app.Action = geth
 	app.Copyright = "Copyright 2013-2023 The go-ethereum Authors"
 	app.Commands = []*cli.Command{
@@ -354,8 +359,6 @@ func geth(ctx *cli.Context) error {
 // it unlocks any requested accounts, and starts the RPC/IPC interfaces and the
 // miner.
 func startNode(ctx *cli.Context, stack *node.Node, backend ethapi.Backend, isConsole bool) {
-	debug.Memsize.Add("node", stack)
-
 	// Start up the node itself
 	utils.StartNode(ctx, stack, isConsole)
 
